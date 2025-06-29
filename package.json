@@ -1,0 +1,179 @@
+{
+  "name": "black-mindz-flow-cash",
+  "version": "0.1.0",
+  "description": "🎵 Transforme seu flow em $USD - Plataforma de tokenização musical na Scroll Network",
+  "main": "index.js",
+  "private": false,
+  "author": {
+    "name": "Black Mindz",
+    "email": "dev@blackmindz.com",
+    "url": "https://github.com/blackmindz"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/blackmindz/black-mindz-flow-cash#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blackmindz/black-mindz-flow-cash.git"
+  },
+  "bugs": {
+    "url": "https://github.com/blackmindz/black-mindz-flow-cash/issues"
+  },
+  "keywords": [
+    "scroll",
+    "blockchain",
+    "music",
+    "nft",
+    "tokenization",
+    "usdt",
+    "royalties",
+    "web3",
+    "brazil",
+    "ethereum",
+    "erc721",
+    "solidity",
+    "hardhat",
+    "defi"
+  ],
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "scripts": {
+    "compile": "hardhat compile",
+    "clean": "hardhat clean",
+    "test": "hardhat test",
+    "test:gas": "REPORT_GAS=true hardhat test",
+    "coverage": "hardhat coverage",
+    "deploy:testnet": "hardhat run scripts/deploy.js --network scrollSepolia",
+    "deploy:mainnet": "hardhat run scripts/deploy.js --network scroll",
+    "test-contract:testnet": "hardhat run scripts/test-contract.js --network scrollSepolia",
+    "test-contract:mainnet": "hardhat run scripts/test-contract.js --network scroll",
+    "verify:testnet": "hardhat verify --network scrollSepolia",
+    "verify:mainnet": "hardhat verify --network scroll",
+    "node": "hardhat node",
+    "console": "hardhat console",
+    "flatten": "hardhat flatten",
+    "size": "hardhat size-contracts",
+    "format": "prettier --write 'contracts/**/*.sol' 'scripts/**/*.js' 'test/**/*.js'",
+    "lint": "solhint 'contracts/**/*.sol'",
+    "lint:fix": "solhint 'contracts/**/*.sol' --fix",
+    "prepare": "husky install",
+    "precommit": "npm run format && npm run lint",
+    "docs": "hardhat docgen",
+    "setup": "chmod +x setup.sh && ./setup.sh",
+    "start": "npm run compile && npm run deploy:testnet"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
+    "@nomicfoundation/hardhat-ethers": "^3.0.0",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.0",
+    "@typechain/ethers-v6": "^0.5.0",
+    "@typechain/hardhat": "^9.0.0",
+    "@types/chai": "^4.2.0",
+    "@types/mocha": ">=9.1.0",
+    "chai": "^4.2.0",
+    "ethers": "^6.4.0",
+    "hardhat": "^2.19.0",
+    "hardhat-contract-sizer": "^2.10.0",
+    "hardhat-docgen": "^1.3.0",
+    "hardhat-gas-reporter": "^1.0.8",
+    "husky": "^8.0.3",
+    "prettier": "^3.0.0",
+    "prettier-plugin-solidity": "^1.1.3",
+    "solhint": "^4.0.0",
+    "solidity-coverage": "^0.8.5",
+    "typechain": "^8.3.0",
+    "typescript": "~5.0.4"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.1",
+    "@openzeppelin/contracts-upgradeable": "^5.0.1",
+    "dotenv": "^16.3.1"
+  },
+  "peerDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.19.0"
+  },
+  "optionalDependencies": {
+    "@tenderly/hardhat-tenderly": "^1.7.0",
+    "hardhat-shorthand": "^1.0.0"
+  },
+  "config": {
+    "solidity": {
+      "version": "0.8.19",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      }
+    },
+    "networks": {
+      "default": "scrollSepolia",
+      "testnet": "scrollSepolia",
+      "mainnet": "scroll"
+    }
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/blackmindz"
+  },
+  "contributors": [
+    {
+      "name": "DGuedz",
+      "email": "dguedz@blackmindz.com",
+      "role": "Lead Developer"
+    }
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
+
+Explicação das Dependências
+
+Core Development:
+hardhat - Framework principal para desenvolvimento
+@openzeppelin/contracts - Contratos seguros e auditados
+ethers - Biblioteca para interação com Ethereum/Scroll
+dotenv - Gerenciamento de variáveis de ambiente
+
+Testing & Quality:
+chai + mocha - Framework de testes
+hardhat-coverage - Cobertura de testes
+hardhat-gas-reporter - Análise de gas
+solhint + prettier - Linting e formatação
+
+Verification & Docs:
+@nomicfoundation/hardhat-verify - Verificação de contratos
+hardhat-docgen - Geração automática de docs
+hardhat-contract-sizer - Análise de tamanho dos contratos
+
+Scroll Specific:
+Configuração otimizada para Scroll Sepolia e Mainnet
+Gas settings específicos para zkEVM
+Verificação no ScrollScan
+
+Scripts Principais:
+# Desenvolvimento
+npm run compile          # Compilar contratos
+npm run test            # Executar testes
+npm run coverage        # Cobertura de testes
+
+#Deploy
+npm run deploy:testnet   # Deploy Scroll Testnet
+npm run deploy:mainnet   # Deploy Scroll Mainnet
+
+#Verificação
+npm run verify:testnet   # Verificar no ScrollScan
+npm run test-contract:testnet # Testar pós-deploy
+
+#Qualidade
+npm run format          # Formatar código
+npm run lint           # Verificar padrões
+npm run size           # Analisar tamanho contratos
+
+#Quick Start
+npm run setup          # Setup completo automático
+npm start             # Compile + Deploy testnet
