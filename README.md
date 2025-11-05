@@ -1,7 +1,3 @@
-Perfeito. Juntando os conteúdos dos documentos, aqui está a versão **atualizada, técnica e sem emojis** do texto do **Black Mindz Flow Ca$h**, incorporando as novas informações sobre automação EVM, integração com o ecossistema Scroll, sistema de royalties, distribuição direta e tokenização musical:
-
----
-
 # **Black Mindz Flow Ca$h**
 
 **Transforme seu flow em $USD na sua conta.**
